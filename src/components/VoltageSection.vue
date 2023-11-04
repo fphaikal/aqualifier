@@ -8,7 +8,7 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>Solar Voltage</h4>
-                  <h2 class="card-title m-0">{{ voltage.Solar_Voltage }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.Solar_Voltage }} {{ voltage.Unit_Voltage }}</h2>
                 </div>
               </div>
             </div>
@@ -16,47 +16,54 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>StepDown Voltage</h4>
-                  <h2 class="card-title m-0">{{ voltage.StepDown_Voltage }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.StepDown_Voltage }} {{ voltage.Unit_Voltage }}</h2>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 col-6 mt-2">
+
+            <!-- Battery -->
+            <h3 class="mt-5">Battery</h3>
+            <hr class="mb-0">
+            <div class="col-md-3 col-6">
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>Battery 1 Voltage</h4>
-                  <h2 class="card-title m-0">{{ voltage.Battery1_Voltage }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.Battery1_Voltage }} {{ voltage.Unit_Voltage }}</h2>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 col-6 mt-2">
+            <div class="col-md-3 col-6 ">
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>Battery 1 Capacity</h4>
-                  <h2 class="card-title m-0">{{ voltage.Battery1_Capacity }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.Battery1_Capacity }} {{ voltage.Unit_Capacity }}</h2>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 col-6 mt-2">
+            <div class="col-md-3 col-6 ">
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>Battery 2 Voltage</h4>
-                  <h2 class="card-title m-0">{{ voltage.Battery2_Voltage }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.Battery2_Voltage }} {{ voltage.Unit_Voltage }}</h2>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 col-6 mt-2">
+            <div class="col-md-3 col-6">
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>Battery 2 Capacity</h4>
-                  <h2 class="card-title m-0">{{ voltage.Battery2_Capacity }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.Battery2_Capacity }} {{ voltage.Unit_Capacity }}</h2>
                 </div>
               </div>
             </div>
-            <div class="col-md-2 col-6 mt-2">
+
+            <h3 class="mt-5">PLN</h3>
+            <hr class="mb-0">
+            <div class="col-md-2 col-6 ">
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>PLN Voltage</h4>
-                  <h2 class="card-title m-0">{{ voltage.PLN_Voltage }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.PLN_Voltage }} {{ voltage.Unit_Voltage }}</h2>
                 </div>
               </div>
             </div>
@@ -64,7 +71,7 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>PLN Current</h4>
-                  <h2 class="card-title m-0">{{ voltage.PLN_Current }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.PLN_Current }} {{ voltage.Unit_Current }}</h2>
                 </div>
               </div>
             </div>
@@ -72,7 +79,7 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>PLN Power</h4>
-                  <h2 class="card-title m-0">{{ voltage.PLN_Power }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.PLN_Power }} {{ voltage.Unit_Power }}</h2>
                 </div>
               </div>
             </div>
@@ -80,7 +87,7 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>PLN Energy</h4>
-                  <h2 class="card-title m-0">{{ voltage.PLN_Energy }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.PLN_Energy }} {{ voltage.Unit_Energy }}</h2>
                 </div>
               </div>
             </div>
@@ -88,7 +95,7 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>PLN Frequency</h4>
-                  <h2 class="card-title m-0">{{ voltage.PLN_Frequency }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.PLN_Frequency }} {{ voltage.Unit_Frequency }}</h2>
                 </div>
               </div>
             </div>
@@ -96,7 +103,58 @@
               <div class="card rounded-4">
                 <div class="card-body">
                   <h4>PLN PF</h4>
-                  <h2 class="card-title m-0">{{ voltage.PLN_PF }}</h2>
+                  <h2 class="card-title m-0">{{ voltage.PLN_PF }} {{ voltage.Unit_PF }}</h2>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="mt-5">Inverter</h3>
+            <hr class="mb-0">
+            <div class="col-md-2 col-6 mt-2">
+              <div class="card rounded-4">
+                <div class="card-body">
+                  <h4>Inverter Voltage</h4>
+                  <h2 class="card-title m-0">{{ voltage.Inverter_Voltage }} {{ voltage.Unit_Voltage }}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-6 mt-2">
+              <div class="card rounded-4">
+                <div class="card-body">
+                  <h4>Inverter Current</h4>
+                  <h2 class="card-title m-0">{{ voltage.Inverter_Current }} {{ voltage.Unit_Current }}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-6 mt-2">
+              <div class="card rounded-4">
+                <div class="card-body">
+                  <h4>Inverter Power</h4>
+                  <h2 class="card-title m-0">{{ voltage.Inverter_Power }} {{ voltage.Unit_Power }}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-6 mt-2">
+              <div class="card rounded-4">
+                <div class="card-body">
+                  <h4>Inverter Energy</h4>
+                  <h2 class="card-title m-0">{{ voltage.Inverter_Energy }} {{ voltage.Unit_Energy }}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-6 mt-2">
+              <div class="card rounded-4">
+                <div class="card-body">
+                  <h4>Inverter Frequency</h4>
+                  <h2 class="card-title m-0">{{ voltage.Inverter_Frequency }} {{ voltage.Unit_Frequency }}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-6 mt-2">
+              <div class="card rounded-4">
+                <div class="card-body">
+                  <h4>Inverter PF</h4>
+                  <h2 class="card-title m-0">{{ voltage.Inverter_PF }} {{ voltage.Unit_PF }}</h2>
                 </div>
               </div>
             </div>

@@ -11,8 +11,7 @@
         <v-list density="compact" nav>
           <v-list-item to="/" prepend-icon="mdi-home" title="Home"></v-list-item>
           <v-list-item to="/voltage" prepend-icon="mdi-account-multiple" title="Voltage"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" title="Actuator"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" title="System"></v-list-item>
+          <v-list-item to="/system" prepend-icon="mdi-star" title="System"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 

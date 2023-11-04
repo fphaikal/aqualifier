@@ -1,6 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import Voltage from '@/views/VoltageView.vue'
+import System from '@/views/SystemView.vue'
 const routes = [
   {
     path: '/',
@@ -21,6 +22,14 @@ const routes = [
           title: 'Voltage'
         },
         component: Voltage,
+      },
+      {
+        path: 'system',
+        name: 'System',
+        meta: {
+          title: 'System'
+        },
+        component: System,
       },
     ],
   },
