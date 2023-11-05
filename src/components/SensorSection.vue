@@ -22,6 +22,21 @@
           <div class="col-sm-6 col-md-4 col-lg-3 text-center">
             <div class="card mt-4 rounded-4">
               <div class="card-body">
+                <h5 class="card-title mb-3">Water Flow</h5>
+                <ve-progress :progress="waterFlowProgress" font-size="25px" :legend="sensor.Water_Flow" :thickness="15" :half="true" :angle="-720">
+                  <template #legend>
+                    <span> / 14</span>
+                  </template>
+                  <template #legend-caption>
+                    <span>{{ sensor.Water_Flow_Index }}</span>
+                  </template>
+                </ve-progress>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+            <div class="card mt-4 rounded-4">
+              <div class="card-body">
                 <h5 class="card-title mb-3">Soil PH</h5>
                 <ve-progress :progress="soilPhProgress" font-size="25px" color="DimGray" :legend="sensor.Soil_Ph" :thickness="15" :half="true" :angle="-720">
                   <template #legend>
@@ -243,6 +258,9 @@ export default {
   computed: {
     waterPhProgress() {
       return (this.sensor.Water_Ph * 100) / 14;
+    },
+    waterFlowProgress() {
+      return (this.sensor.Water_Flow * 100) / 14;
     },
     soilPhProgress() {
       return (this.sensor.Soil_Ph * 100) / 14;

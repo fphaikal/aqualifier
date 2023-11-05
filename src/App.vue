@@ -2,11 +2,6 @@
   <v-card>
     <v-layout>
       <v-navigation-drawer expand-on-hover rail>
-        <v-list>
-          <v-list-item prepend-avatar="/public/aqualifier.svg" title="Aqualifier"></v-list-item>
-        </v-list>
-
-        <v-divider></v-divider>
 
         <v-list density="compact" nav>
           <v-list-item to="/" prepend-icon="mdi-home" title="Home"></v-list-item>
@@ -34,6 +29,9 @@
                 </li>
                 <li class="nav-item">
                   <router-link to="/system" class="nav-link">System</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/error" class="nav-link">Error Log</router-link>
                 </li>
               </ul>
             </div>
