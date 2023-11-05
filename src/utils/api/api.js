@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiData = axios.create({
-  baseURL: 'https://api.aqualifier.my.id',
+  baseURL: 'https://api.aqualifier.cloud',
 });
 
 const getData = async (endpoint) => {
