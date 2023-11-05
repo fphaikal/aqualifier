@@ -17,8 +17,8 @@
         </div>
       </div>
       <div v-if="actuator">
-        <div class="row mt-5">
-          <div class="col-md-3">
+        <div class="row mt-5 g-2">
+          <div class="col-md-3 col-6">
             <div class="card rounded-4">
               <div class="card-body d-flex">
                 <h3 class="card-title my-auto">Pump Tank</h3>
@@ -29,7 +29,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-6">
             <div class="card rounded-4">
               <div class="card-body d-flex">
                 <h3 class="card-title my-auto">Pump Booster</h3>
@@ -40,7 +40,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-6">
             <div class="card rounded-4">
               <div class="card-body d-flex">
                 <h3 class="card-title my-auto">Selenoid Valve</h3>
@@ -51,13 +51,43 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-6">
             <div class="card rounded-4">
               <div class="card-body d-flex">
                 <h3 class="card-title my-auto">Lamp</h3>
                 <div class="form-check form-switch my-auto ms-auto">
                   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
                     :checked="actuator && actuator.Lamp" :disabled="!system.Switch || system.Auto" @change="toggleLamp(!actuator.Lamp)">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-if="system">
+        <div class="row mt-1 g-2">
+          <div class="col-md-6">
+            <div class="card rounded-4">
+              <div class="card-body d-flex">
+                <h3 class="card-title my-auto m-0">PLN</h3>
+                <div v-if="system.PLN" class="my-auto ms-auto">
+                  <h4 class="my-auto"><div class="badge bg-success rounded-3">Nyala</div></h4>
+                </div>
+                <div v-else class="my-auto ms-auto">
+                  <h4 class="my-auto"><div class="badge bg-danger rounded-3">Mati</div></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card rounded-4">
+              <div class="card-body d-flex">
+                <h3 class="card-title my-auto m-0">PLTS</h3>
+                <div v-if="system.PLTS" class="my-auto ms-auto">
+                  <h4 class="my-auto"><div class="badge bg-success rounded-3">Nyala</div></h4>
+                </div>
+                <div v-else class="my-auto ms-auto">
+                  <h4 class="my-auto"><div class="badge bg-danger rounded-3">Mati</div></h4>
                 </div>
               </div>
             </div>

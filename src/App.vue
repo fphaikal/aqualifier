@@ -3,15 +3,16 @@
     <v-layout>
       <v-navigation-drawer expand-on-hover rail>
         <v-list>
-          <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" title="Aqualifier"></v-list-item>
+          <v-list-item prepend-avatar="/public/aqualifier.svg" title="Aqualifier"></v-list-item>
         </v-list>
 
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
           <v-list-item to="/" prepend-icon="mdi-home" title="Home"></v-list-item>
-          <v-list-item to="/voltage" prepend-icon="mdi-account-multiple" title="Voltage"></v-list-item>
-          <v-list-item to="/system" prepend-icon="mdi-star" title="System"></v-list-item>
+          <v-list-item to="/voltage" prepend-icon="mdi-flash" title="Voltage"></v-list-item>
+          <v-list-item to="/system" prepend-icon="mdi-wrench" title="System"></v-list-item>
+          <v-list-item to="/error" prepend-icon="mdi-alert-circle" title="Error Log"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 
@@ -26,13 +27,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <router-link to="/" class="nav-link active" aria-current="page" href="#">Home</router-link>
+                  <router-link to="/" class="nav-link active" aria-current="page">Home</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="/voltage" class="nav-link" href="#">Voltage</router-link>
+                  <router-link to="/voltage" class="nav-link">Voltage</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Actuator</a>
+                  <router-link to="/system" class="nav-link">System</router-link>
                 </li>
               </ul>
             </div>

@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Voltage from '@/views/VoltageView.vue'
 import System from '@/views/SystemView.vue'
+import Error from '@/views/ErrorView.vue'
 const routes = [
   {
     path: '/',
@@ -30,6 +31,14 @@ const routes = [
           title: 'System'
         },
         component: System,
+      },
+      {
+        path: 'error',
+        name: 'Error',
+        meta: {
+          title: 'Error Log '
+        },
+        component: Error,
       },
     ],
   },
