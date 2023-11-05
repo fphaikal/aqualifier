@@ -112,13 +112,31 @@ export default {
   async mounted() {
     try {
       // Memuat data pertama kali
-      this.actuator = await getData('get/actuator')
+      this.actuator = await this.getActuatorData();
       this.system = await getData('get/system')
+
+      this.intervalId = setInterval(async () => {
+        this.actuator = await this.getActuatorData();
+        console.log('Data Berhasil Update')
+      }, 1000);
     } catch (error) {
       console.log(error);
     }
   },
+  beforeRouteLeave(to, from, next) {
+    // Membersihkan interval saat meninggalkan rute saat ini
+    clearInterval(this.intervalId);
+    next();
+  },
   methods: {
+    async getActuatorData() {
+      try {
+        return await getData('get/actuator');
+      } catch (error) {
+        console.log(error);
+        return null;
+      }
+    },
     async toggleSwitch(value) {
       try {
         await getData(`get/edit/system?switch=${value}`);
