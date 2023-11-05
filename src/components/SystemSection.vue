@@ -46,7 +46,7 @@
                 <h3 class="card-title my-auto">Selenoid Valve</h3>
                 <div class="form-check form-switch my-auto ms-auto">
                   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    :checked="actuator && actuator.Selenoid_Valve" :disabled="!system.Switch|| system.Auto" @change="toggleSelenoid(!actuator.Selenoid_Valve)">
+                    :checked="actuator && actuator.Selenoid_Valve" :disabled="!system.Switch|| system.Auto" @change="F(!actuator.Selenoid_Valve)">
                 </div>
               </div>
             </div>

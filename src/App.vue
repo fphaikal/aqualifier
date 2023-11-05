@@ -1,14 +1,19 @@
 <template>
   <v-card>
     <v-layout>
-      <v-navigation-drawer expand-on-hover rail>
-
+      <v-navigation-drawer>
         <v-list density="compact" nav>
           <v-list-item to="/" prepend-icon="mdi-home" title="Home"></v-list-item>
           <v-list-item to="/voltage" prepend-icon="mdi-flash" title="Voltage"></v-list-item>
           <v-list-item to="/system" prepend-icon="mdi-wrench" title="System"></v-list-item>
           <v-list-item to="/error" prepend-icon="mdi-alert-circle" title="Error Log"></v-list-item>
         </v-list>
+
+        <template v-slot:append>
+          <div class="pa-2 text-center">
+            Made By Tierkun & FPHaikal
+          </div>
+        </template>
       </v-navigation-drawer>
 
       <v-main>
