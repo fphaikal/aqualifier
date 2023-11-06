@@ -13,9 +13,9 @@
                   <div class="card-body">
                     <h5 class="card-title mb-3">Water PH</h5>
                     <ve-progress :progress="waterPhProgress" font-size="25px" :legend="sensor.Water_Ph" :thickness="15"
-                      :half="true" :angle="-720">
+                      :half="true" :color="colorpH(sensor.Water_Ph)" :angle="-720">
                       <template #legend>
-                        <span> / 14</span>
+                        <span>{{ sensor.Unit_Ph }}</span>
                       </template>
                       <template #legend-caption>
                         <span>{{ sensor.Soil_Index }}</span>
@@ -82,10 +82,10 @@
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Soil PH</h5>
-                <ve-progress :progress="soilPhProgress" font-size="25px" color="DimGray" :legend="sensor.Soil_Ph"
+                <ve-progress :progress="soilPhProgress" font-size="25px" :color="colorpH(sensor.Soil_Ph)" :legend="sensor.Soil_Ph"
                   :thickness="15" :half="true" :angle="-720">
                   <template #legend>
-                    <span> / 14</span>
+                    <span>{{ sensor.Unit_Ph }}</span>
                   </template>
                   <template #legend-caption>
                     <span>{{ sensor.Soil_Index }}</span>
@@ -202,70 +202,6 @@ export default {
   data() {
     return {
       sensor: null,
-      phIndicator: {
-        colors: [
-          {
-            color: "#EE2028",
-            offset: "0"
-          },
-          {
-            color: "#F36533",
-            offset: "7.14"
-          },
-          {
-            color: "#F99022",
-            offset: "14.34"
-          },
-          {
-            color: "#FFC424",
-            offset: "21.51"
-          },
-          {
-            color: "#FBEF1F",
-            offset: "28.68"
-          },
-          {
-            color: "#82C541",
-            offset: "35.85"
-          },
-          {
-            color: "#4FB849",
-            offset: "43.02"
-          },
-          {
-            color: "#31A948",
-            offset: "50.19"
-          },
-          {
-            color: "#0AB8B6",
-            offset: "57.36"
-          },
-          {
-            color: "#4890CE",
-            offset: "64.53"
-          },
-          {
-            color: "#3854A4",
-            offset: "71.7"
-          },
-          {
-            color: "#5B53A3",
-            offset: "78.87"
-          },
-          {
-            color: "#64469B",
-            offset: "86.04"
-          },
-          {
-            color: "#6D2B81",
-            offset: "93.21"
-          },
-          {
-            color: "#4C276D",
-            offset: "100"
-          },
-        ]
-      },
     }
   },
   async mounted() {
@@ -281,6 +217,39 @@ export default {
     next();
   },
   methods: {
+    colorpH(pH) {
+      if (pH === 0) {
+        return '#EE2028'
+      } else if (pH === 1) {
+        return '#F36533'
+      } else if (pH === 2) {
+        return '#F99022'
+      } else if (pH === 3) {
+        return '#FFC424'
+      } else if (pH === 4) {
+        return '#FBEF1F'
+      } else if (pH === 5) {
+        return '#82C541'
+      } else if (pH === 6) {
+        return '#4FB849'
+      } else if (pH === 7) {
+        return '#31A948'
+      } else if (pH === 8) {
+        return '#0AB8B6'
+      } else if (pH === 9) {
+        return '#4890CE'
+      } else if (pH === 10) {
+        return '#3854A4'
+      } else if (pH === 11) {
+        return '#5B53A3'
+      } else if (pH === 12) {
+        return '#64469B'
+      } else if (pH === 13) {
+        return '#6D2B81'
+      } else if (pH === 14) {
+        return '#4C276D'
+      }
+    },
     async intervalData() {
       try {
         this.sensor = await getData('get/sensor')
