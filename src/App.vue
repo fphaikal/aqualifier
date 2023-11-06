@@ -42,7 +42,7 @@
             </div>
           </div>
         </nav>
-        <router-view />
+        <router-view class="bg-light" />
       </v-main>
     </v-layout>
   </v-card>

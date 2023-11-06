@@ -4,43 +4,88 @@
       <h1>Monitoring Sensor</h1>
       <div v-if="sensor">
         <div class="row">
-          <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-            <div class="card mt-4 rounded-4">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Water PH</h5>
-                <ve-progress :progress="waterPhProgress" font-size="25px" :legend="sensor.Water_Ph" :thickness="15" :half="true" :angle="-720">
-                  <template #legend>
-                    <span> / 14</span>
-                  </template>
-                  <template #legend-caption>
-                    <span>{{ sensor.Soil_Index }}</span>
-                  </template>
-                </ve-progress>
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <h5 class="mt-5">Water Sensor</h5>
+              <hr class="mb-0">
+              <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                <div class="card mt-4 rounded-4">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Water PH</h5>
+                    <ve-progress :progress="waterPhProgress" font-size="25px" :legend="sensor.Water_Ph" :thickness="15"
+                      :half="true" :angle="-720">
+                      <template #legend>
+                        <span> / 14</span>
+                      </template>
+                      <template #legend-caption>
+                        <span>{{ sensor.Soil_Index }}</span>
+                      </template>
+                    </ve-progress>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                <div class="card mt-4 rounded-4">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Water Flow</h5>
+                    <ve-progress :progress="waterFlowProgress" font-size="25px" :legend="sensor.Water_Flow"
+                      :thickness="15" :half="true" :angle="-720">
+                      <template #legend>
+                        <span>{{ sensor.Unit_Water }}</span>
+                      </template>
+                      <template #legend-caption>
+                        <span>{{ sensor.Water_Flow_Index }}</span>
+                      </template>
+                    </ve-progress>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-            <div class="card mt-4 rounded-4">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Water Flow</h5>
-                <ve-progress :progress="waterFlowProgress" font-size="25px" :legend="sensor.Water_Flow" :thickness="15" :half="true" :angle="-720">
-                  <template #legend>
-                    <span> / 14</span>
-                  </template>
-                  <template #legend-caption>
-                    <span>{{ sensor.Water_Flow_Index }}</span>
-                  </template>
-                </ve-progress>
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <h5 class="mt-5">Air Sensor</h5>
+              <hr class="mb-0">
+              <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                <div class="card mt-4 rounded-4">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Air Temperature</h5>
+                    <ve-progress :progress="sensor.Air_Temperature" font-size="25px" color="#99d9ff" :thickness="15"
+                      :half="true" :angle="-720">
+                      <template #legend>
+                        <span>{{ sensor.Unit_Temperature }}</span>
+                      </template>
+                    </ve-progress>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                <div class="card mt-4 rounded-4">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Air Humidity</h5>
+                    <ve-progress :progress="sensor.Air_Humidity" font-size="25px" color="#99d9ff" :thickness="15"
+                      :half="true" :angle="-720">
+                      <template #legend>
+                        <span>{{ sensor.Unit_Humidity }}</span>
+                      </template>
+                    </ve-progress>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="row">
+          <h5 class="mt-5">Soil Sensor</h5>
+          <hr class="mb-0">
           <div class="col-sm-6 col-md-4 col-lg-3 text-center">
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Soil PH</h5>
-                <ve-progress :progress="soilPhProgress" font-size="25px" color="DimGray" :legend="sensor.Soil_Ph" :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="soilPhProgress" font-size="25px" color="DimGray" :legend="sensor.Soil_Ph"
+                  :thickness="15" :half="true" :angle="-720">
                   <template #legend>
-                    <span> / 14</span>                    
+                    <span> / 14</span>
                   </template>
                   <template #legend-caption>
                     <span>{{ sensor.Soil_Index }}</span>
@@ -53,9 +98,10 @@
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Soil Moisture</h5>
-                <ve-progress :progress="sensor.Soil_Moisture" font-size="25px" color="DimGray"  :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="sensor.Soil_Moisture" font-size="25px" color="DimGray" :thickness="15"
+                  :half="true" :angle="-720">
                   <template #legend>
-                    <span>{{ sensor.Unit_Moisture }}</span>                    
+                    <span>{{ sensor.Unit_Moisture }}</span>
                   </template>
                   <template #legend-caption>
                     <span>{{ sensor.Soil_Index }}</span>
@@ -68,45 +114,30 @@
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Soil Temperature</h5>
-                <ve-progress :progress="sensor.Soil_Temperature" font-size="25px" color="DimGray"  :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="sensor.Soil_Temperature" font-size="25px" color="DimGray" :thickness="15"
+                  :half="true" :angle="-720">
                   <template #legend>
-                    <span>{{ sensor.Unit_Temperature }}</span>                    
+                    <span>{{ sensor.Unit_Temperature }}</span>
                   </template>
                 </ve-progress>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-            <div class="card mt-4 rounded-4">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Air Temperature</h5>
-                <ve-progress :progress="sensor.Air_Temperature" font-size="25px" color="#99d9ff"  :thickness="15" :half="true" :angle="-720">
-                  <template #legend>
-                    <span>{{ sensor.Unit_Temperature }}</span>                    
-                  </template>
-                </ve-progress>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-            <div class="card mt-4 rounded-4">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Air Humidity</h5>
-                <ve-progress :progress="sensor.Air_Humidity" font-size="25px" color="#99d9ff"  :thickness="15" :half="true" :angle="-720">
-                  <template #legend>
-                    <span>{{ sensor.Unit_Humidity }}</span>                    
-                  </template>
-                </ve-progress>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+          <h5 class="mt-5">Other Sensor</h5>
+          <hr class="mb-0">
           <div class="col-sm-6 col-md-4 col-lg-3 text-center">
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Anemo</h5>
-                <ve-progress :progress="sensor.Anemo" font-size="25px" color="#97c0ee"  :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="sensor.Anemo" font-size="25px" color="#97c0ee" :thickness="15" :half="true"
+                  :angle="-720">
                   <template #legend>
-                    <span>{{ sensor.Unit_Anemo }}</span>                    
+                    <span>{{ sensor.Unit_Anemo }}</span>
                   </template>
                   <template #legend-caption>
                     <span>{{ sensor.Anemo_Index }}</span>
@@ -119,9 +150,10 @@
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">LDR</h5>
-                <ve-progress :progress="sensor.LDR" font-size="25px" color="#ffaa1d"  :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="sensor.LDR" font-size="25px" color="#ffaa1d" :thickness="15" :half="true"
+                  :angle="-720">
                   <template #legend>
-                    <span>{{ sensor.Unit_LDR }}</span>                    
+                    <span>{{ sensor.Unit_LDR }}</span>
                   </template>
                   <template #legend-caption>
                     <span>{{ sensor.LDR_Index }}</span>
@@ -134,9 +166,10 @@
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Ultrasonic</h5>
-                <ve-progress :progress="sensor.Ultrasonic" font-size="25px" color="DimGray"  :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="sensor.Ultrasonic" font-size="25px" color="DimGray" :thickness="15" :half="true"
+                  :angle="-720">
                   <template #legend>
-                    <span>{{ sensor.Unit_Ultrasonic }}</span>                    
+                    <span>{{ sensor.Unit_Ultrasonic }}</span>
                   </template>
                 </ve-progress>
               </div>
@@ -146,9 +179,10 @@
             <div class="card mt-4 rounded-4">
               <div class="card-body">
                 <h5 class="card-title mb-3">Tank</h5>
-                <ve-progress :progress="sensor.Tank_Percentage" font-size="25px" color="#ff5e00"  :thickness="15" :half="true" :angle="-720">
+                <ve-progress :progress="sensor.Tank_Percentage" font-size="25px" color="#ff5e00" :thickness="15"
+                  :half="true" :angle="-720">
                   <template #legend>
-                    <span> / {{ sensor.Tank_Capacity }}</span>                    
+                    <span> / {{ sensor.Tank_Capacity }}</span>
                   </template>
                 </ve-progress>
               </div>
@@ -247,10 +281,10 @@ export default {
     next();
   },
   methods: {
-    async intervalData (){
-      try{
+    async intervalData() {
+      try {
         this.sensor = await getData('get/sensor')
-      } catch(error) {
+      } catch (error) {
         console.log(error)
       }
     }
@@ -260,7 +294,7 @@ export default {
       return (this.sensor.Water_Ph * 100) / 14;
     },
     waterFlowProgress() {
-      return (this.sensor.Water_Flow * 100) / 14;
+      return (this.sensor.Water_Flow * 100) / 1800;
     },
     soilPhProgress() {
       return (this.sensor.Soil_Ph * 100) / 14;
