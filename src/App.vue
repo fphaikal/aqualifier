@@ -17,7 +17,7 @@
       </v-navigation-drawer>
 
       <v-main>
-        <nav class="navbar navbar-expand-lg d-lg-none bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg d-lg-none bg-body-tertiary fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">{{ $route.meta.title }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
