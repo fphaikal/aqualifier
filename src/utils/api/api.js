@@ -14,7 +14,22 @@ const getData = async (endpoint) => {
   }
 };
 
+const callbackTest = (updateCallback) => {
+  const eventSource = new EventSource(`${apiData}/get/voltage`);
+
+  eventSource.onmessage = (event) => {
+    updateCallback(JSON.parse(event.data));
+  };
+
+  eventSource.onerror = (error) => {
+    // Handle errors
+    console.error('SSE Error:', error);
+    eventSource.close();
+  };
+};
+
 // Export semua fungsi yang diperlukan
 export { 
   getData,
+  callbackTest
 };
